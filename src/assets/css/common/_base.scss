@@ -1,0 +1,72 @@
+/* Global Variable */
+:root {
+  --screen-height: 100vh;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: #000;
+  
+}
+
+html,
+body,
+button,
+select {
+  color: $font-color;
+
+  @include fontBase();
+
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-rendering: geometricPrecision;
+}
+
+main {
+  position: relative;
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+img,
+svg {
+  height: auto;
+  vertical-align: bottom;
+}
+
+a {
+  cursor: pointer;
+}
+
+small {
+  font-size: 0.8em;
+}
+
+u {
+  text-decoration: underline;
+  
+  * {
+    text-decoration: underline;
+  }
+}
+
+table {
+  border-collapse: initial;
+  border-spacing: 1px;
+  width: 100%;
+  margin-bottom: 1.5em;
+  background: #999;
+}
+thead th {
+  background: #ccc;
+}
+th, td {
+  padding: .5em .8em;
+  vertical-align: middle;
+  border-bottom: none;
+  text-align: center;
+  background: #fff;
+}
+th {font-weight:normal;}

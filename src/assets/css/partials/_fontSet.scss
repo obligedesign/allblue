@@ -1,0 +1,52 @@
+@mixin fontBase() {
+  font-size: 16px;
+  font-family: $fontFamilyDefault;
+  font-feature-settings: 'palt' on;
+  letter-spacing: 0.04em;
+  line-height: 1.9;
+}
+
+@mixin fontFormDefault($size: 13, $unit: px) {
+  font-size: $size + $unit;
+  line-height: 1.54;
+  font-family: $fontFamilyDefault;
+}
+
+@mixin fontButton($size: 12, $unit: px) {
+  font-size: $size + $unit;
+  font-family: $fontHeading;
+  font-weight: 700;
+}
+
+@mixin fontSetTitle($size: 36, $unit: px) {
+  font-family: $fontHeading;
+  font-size: $size + $unit;
+  font-weight: 400;
+  line-height: 1.29;
+  text-align: center;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+@mixin fontSetTitleBold($size: 36, $unit: px) {
+  font-family: $fontHeading;
+  font-size: $size + $unit;
+  font-weight: 700;
+  line-height: 1.29;
+  text-align: center;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+@mixin fontSetTextMedium($size: 13, $unit: px) {
+  font-weight: 500;
+  font-size: $size + $unit;
+  line-height: 1.54;
+}
+
+@mixin fontSetTextSmall($size: 10, $unit: px) {
+  font-weight: 500;
+  font-size: $size + $unit;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+}

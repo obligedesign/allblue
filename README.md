@@ -7,7 +7,7 @@
 #### 管理者アカウント(Local)
 
 - ID: `admin@master`
-- PASS: ``
+- PASS: `ghQ92s)RlXRkseWy*E`
 
 #### 管理者アカウント(stg)
 - URL: ``
@@ -18,7 +18,7 @@
 
 ##### WordPress
 - ID: `admin@master`
-- PASS: `w^FtVA&@THLMg%@X^C(*jknp`
+- PASS: `ghQ92s)RlXRkseWy*E`
 
 ---
 
