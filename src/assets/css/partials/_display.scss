@@ -1,0 +1,39 @@
+@use './variables' as var;
+@use './functions' as func;
+
+.is-visible-pc {
+  display: none;
+}
+
+.is-visible-tablet {
+  display: block;
+}
+
+.is-hidden-tablet {
+  display: none;
+}
+
+.is-visible-sp {
+  display: block;
+}
+
+@media screen and (min-width: var.$tabletPortrait) {
+  .is-visible-pc {
+    display: block;
+  }
+  
+  .is-visible-sp {
+    display: none;
+  }
+}
+
+@media screen and (min-width: var.$tabletMiddleSize) {
+  .is-visible-tablet {
+    display: none;
+  }
+  
+  .is-hidden-tablet {
+    display: block;
+  }
+  
+}

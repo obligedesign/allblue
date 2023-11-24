@@ -1,52 +1,218 @@
+@use './variables' as var;
+@use './functions' as func;
+
+// Paragraph/M-HL Base
 @mixin fontBase() {
-  font-size: 16px;
-  font-family: $fontFamilyDefault;
+  font-family: var.$fontFamilyDefault;
   font-feature-settings: 'palt' on;
-  letter-spacing: 0.04em;
-  line-height: 1.9;
+  @include fontSetTextMedium-HL();
 }
 
-@mixin fontFormDefault($size: 13, $unit: px) {
+@mixin fontBase--sp() {
+  font-family: var.$fontFamilyDefault;
+  font-feature-settings: 'palt' on;
+  @include fontSetTextMedium-HL--sp();
+}
+
+@mixin fontFormDefault($size: 1.3, $unit: rem) {
   font-size: $size + $unit;
   line-height: 1.54;
-  font-family: $fontFamilyDefault;
+  font-family: var.$fontFamilyDefault;
 }
 
-@mixin fontButton($size: 12, $unit: px) {
+@mixin fontButton($size: 1.2, $unit: rem) {
   font-size: $size + $unit;
-  font-family: $fontHeading;
   font-weight: 700;
 }
 
-@mixin fontSetTitle($size: 36, $unit: px) {
-  font-family: $fontHeading;
+// PC: Heading/XXL
+@mixin fontSetHeadingXXL($size: 5.4, $unit: rem) {
+  font-size: $size + $unit;
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: 0.04em;
+}
+
+// PC: Heading/XL
+@mixin fontSetHeadingXL($size: 4.6, $unit: rem) {
+  font-size: $size + $unit;
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: 0.04em;
+}
+
+// PC: Heading/L
+@mixin fontSetHeadingLarge($size: 4.2, $unit: rem) {
+  font-size: $size + $unit;
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: 0.04em;
+}
+
+// PC: Heading/M
+@mixin fontSetHeadingMedium($size: 3.2, $unit: rem) {
+  font-size: $size + $unit;
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: 0.04em;
+}
+
+// PC: Heading/S
+@mixin fontSetHeadingSmall($size: 1.5, $unit: rem) {
+  font-size: $size + $unit;
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: 0.04em;
+}
+
+// PC: Heading/XS
+@mixin fontSetHeadingXS($size: 5.4, $unit: rem) {
+  font-size: $size + $unit;
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: 0.04em;
+}
+
+// PC: Paragraph/L
+@mixin fontSetTextLarge($size: 2.2, $unit: rem) {
+  font-size: $size + $unit;
+  font-weight: 700;
+  line-height: 1.75;
+  letter-spacing: 0.04em;
+}
+
+// PC: Paragraph/M
+@mixin fontSetTextMedium($size: 1.6, $unit: rem) {
+  font-size: $size + $unit;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.04em;
+}
+
+// PC: Paragraph/M-HL
+@mixin fontSetTextMedium-HL($size: 1.4, $unit: rem) {
+  font-size: $size + $unit;
+  font-weight: 500;
+  line-height: 1.85;
+  letter-spacing: 0.04em;
+}
+
+// PC: Paragraph/S
+@mixin fontSetTextSmall($size: 1.5, $unit: rem) {
+  font-size: $size + $unit;
+  font-weight: 500;
+  line-height: 1.75;
+  letter-spacing: 0.04em;
+}
+
+// PC: Paragraph/XS
+@mixin fontSetTextXS($size: 1.4, $unit: rem) {
   font-size: $size + $unit;
   font-weight: 400;
-  line-height: 1.29;
-  text-align: center;
+  line-height: 1.85;
   letter-spacing: 0.04em;
-  text-transform: uppercase;
 }
 
-@mixin fontSetTitleBold($size: 36, $unit: px) {
-  font-family: $fontHeading;
-  font-size: $size + $unit;
+// SP: Heading/XXL
+@mixin fontSetHeadingXXL--sp($size: 31) {
+  font-size: func.convertPXtoVW($size);
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: 0.04em;
+}
+
+// SP: Heading/XL
+@mixin fontSetHeadingXL--sp($size: 26) {
+  font-size: func.convertPXtoVW($size);
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: 0.04em;
+}
+
+// SP: Heading/L
+@mixin fontSetHeadingLarge--sp($size: 21) {
+  font-size: func.convertPXtoVW($size);
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: 0.04em;
+}
+
+// SP: Heading/M
+@mixin fontSetHeadingMedium--sp($size: 20) {
+  font-size: func.convertPXtoVW($size);
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: 0.04em;
+}
+
+// SP: Heading/S
+@mixin fontSetHeadingSmall--sp($size: 14) {
+  font-size: func.convertPXtoVW($size);
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: 0.04em;
+}
+
+// SP: Paragraph/XXL
+@mixin fontSetTextXXL--sp($size: 18) {
+  font-size: func.convertPXtoVW($size);
   font-weight: 700;
-  line-height: 1.29;
-  text-align: center;
+  line-height: 1;
   letter-spacing: 0.04em;
-  text-transform: uppercase;
 }
 
-@mixin fontSetTextMedium($size: 13, $unit: px) {
-  font-weight: 500;
-  font-size: $size + $unit;
-  line-height: 1.54;
+// SP: Paragraph/XL
+@mixin fontSetTextXL--sp($size: 16) {
+  font-size: func.convertPXtoVW($size);
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.04em;
 }
 
-@mixin fontSetTextSmall($size: 10, $unit: px) {
+// SP: Paragraph/L
+@mixin fontSetTextLarge--sp($size: 15) {
+  font-size: func.convertPXtoVW($size);
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.04em;
+}
+
+// SP: Paragraph/M
+@mixin fontSetTextMedium--sp($size: 14) {
+  font-size: func.convertPXtoVW($size);
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.04em;
+}
+
+// SP: Paragraph/M-HL
+@mixin fontSetTextMedium-HL--sp($size: 14) {
+  font-size: func.convertPXtoVW($size);
   font-weight: 500;
-  font-size: $size + $unit;
-  line-height: 1.2;
+  line-height: 1.85;
+  letter-spacing: 0.04em;
+}
+
+// SP: Paragraph/S
+@mixin fontSetTextSmall--sp($size: 13) {
+  font-size: func.convertPXtoVW($size);
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0.04em;
+}
+
+// SP: Paragraph/S-HL
+@mixin fontSetTextSmall-HL--sp($size: 13) {
+  font-size: func.convertPXtoVW($size);
+  font-weight: 500;
+  line-height: 1.85;
+  letter-spacing: 0.04em;
+}
+
+// SP: Paragraph/XS
+@mixin fontSetTextXS--sp($size: 12) {
+  font-size: func.convertPXtoVW($size);
+  font-weight: 400;
+  line-height: 1.85;
   letter-spacing: 0.04em;
 }

@@ -3,60 +3,49 @@
   --screen-height: 100vh;
 }
 
-/* window size
------------------*/
-
-$pc: 1200px;
-$pc-mid: 960px;
-$tabletLs: 1024px;
-$tabletMid: 900px;
-$tablet: 768px;
+/* window size */
+$pcWindow: 1440px;
+$tabletMiddleSize: 1080px;
+$tabletLandscape: 1024px;
+$tabletPortrait: 768px;
 $iPhonePlus-LS: 736px;
 $iPhone-LS: 667px;
 $iPhoneSE-LS: 568px;
 $tablet-min: 415px;
 $iPhonePlus: 414px;
 $iPhone: 375px;
-$iPhoneSE: 320px;
 
 /* Fonts */
-$fontFamilyDefault: 'Noto Sans JP', 'ヒラギノ角ゴ ProN W3',
-'Hiragino Kaku Gothic ProN', 'メイリオ', meiryo, osaka, 'ＭＳ Ｐゴシック', 'MS PGothic',
-sans-serif;
-$fontHeading: 'Oswald', 'Noto Sans JP', 'ヒラギノ角ゴ ProN W3',
-'Hiragino Kaku Gothic ProN', 'メイリオ', meiryo, osaka, 'ＭＳ Ｐゴシック', 'MS PGothic',
-sans-serif;
+$fontFamilyDefault: 'inter', 'Noto Sans JP', 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'メイリオ', meiryo, osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
 
 /* Color */
 $white: #fff;
+$gray25: #fafafa;
+$gray50: #f5f5f5;
+$gray100: #f0f0f0;
+$gray200: #e6e6e6;
+$gray300: #c8c8c8;
+$gray400: #a0a0a0;
+$gray500: #6e6e6e;
+$gray600: #464646;
+$gray700: #323232;
+$gray800: #141414;
+
+$black-natural: $gray800;
 $black: #000;
-$red: #E50012;
-$red-light: #ff4949;
-$green: #009944;
-$green-light: #00dba6;
-$lime-green: #73ff31;
-$blue-light: #00a0e9;
-$yellow: #fee50f;
-$brown: #170B00;
+$red: #B03636;
+$yellow: #FFF100;
+$yellow90: rgba(255, 241, 0, 0.9);
+$yellow85: rgba(255, 241, 0, 0.85);
+$yellow: #FFF100;
+$orange: #F7B52E;
+$deep-pink: #F191BA;
+$pink: #EFA6C5;
+$lime-green: #A3E415;
+$deep-blue: #2E3291;
+$light-blue: #72C7FC;
+$font-color: #1d1d1f;
+$link-color: $gray800;
+$bg-black: #1C1C1C;
 
-$white1: #fff2d7;
-$gray1: #273632;
-
-$black10: #e1e1e1;
-$black20: #2b2b2b;
-$black80: #1f1f1f;
-$black90: #191919;
-$gray10: #d9d9d9;
-$gray20: #c6c6c6;
-$gray25: #ababab;
-$gray30: #777;
-$gray50: #808080;
-$gray75: #4e4e4e;
-
-$font-color: #fff;
-$link-color: #fff;
-$font-black-color: #333;
-
-$base-dark: #173d73;
-$base-light: #4f6380;
-$base-lighter: #8a9bb3;
+$brand-color: #455f7e;

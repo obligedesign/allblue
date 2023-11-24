@@ -38,7 +38,7 @@ echo ' class="'.$pageClass.' pageID-' . get_the_ID() . '"'; ?>><a id="pagetop"><
 
 <?php
 get_template_part('elements/common/header');
-get_template_part('elements/common/nav');
+get_template_part('elements/common/drawer-navigation');
 ?>
 
 <main id="main">

@@ -1,0 +1,64 @@
+@use "../partials/variables" as var;
+@use "../partials/mixins" as mix;
+
+// ============================================================
+// button
+// ============================================================
+@mixin buttonGroupInit {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 4rem;
+}
+
+.button-group {
+  @include buttonGroupInit;
+  justify-content: center;
+  
+  &-right {
+    @include buttonGroupInit;
+    justify-content: flex-end;
+  }
+}
+
+.button01 {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  gap: 0 1rem;
+  position: relative;
+  
+  &::before {
+    content: "";
+    display: block;
+    width: 0;
+    height: min(.1rem, 1px);
+    background: var.$font-color;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    @include mix.transitionDuration();
+  }
+  
+  &::after {
+    content: "";
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    background: url("../img/common/icon-arrow-down.svg") no-repeat center center;
+    background-size: contain;
+    transform: rotate(-90deg);
+    @include mix.transitionDuration();
+  }
+  
+  @media (hover: hover) {
+    &:hover {
+      &::before {
+        width: calc(100% + .8rem);
+      }
+      
+      &::after {
+        transform: rotate(-90deg) translate(0,.4rem);
+      }
+    }
+  }
+}

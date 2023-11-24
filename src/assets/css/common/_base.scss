@@ -1,72 +1,64 @@
-/* Global Variable */
-:root {
-  --screen-height: 100vh;
-}
+@use '../partials/variables' as var;
+@use '../partials/functions' as func;
+@use '../partials/fontSet' as font;
+@use '../partials/mixin' as mx;
+
+// base font size: 1rem = 10px
 
 html {
+  font-size: 2.667vw;
   scroll-behavior: smooth;
-  background: #000;
-  
+  scroll-padding-top: 6rem;
 }
 
-html,
-body,
-button,
-select {
-  color: $font-color;
-
-  @include fontBase();
-
-  -webkit-font-smoothing: antialiased;
-  -webkit-text-rendering: geometricPrecision;
+body {
+  margin-top: 10rem;
+  text-align: justify;
+  @include font.fontBase--sp();
 }
 
-main {
-  position: relative;
-
-  > * {
-    position: relative;
-    z-index: 1;
+@media screen and (max-width:var.$tabletMiddleSize) {
+  body {
+    margin-top: 8rem;
   }
-}
-
-img,
-svg {
-  height: auto;
-  vertical-align: bottom;
 }
 
 a {
   cursor: pointer;
 }
 
-small {
-  font-size: 0.8em;
+img {
+  vertical-align: bottom;
 }
 
-u {
-  text-decoration: underline;
-  
-  * {
-    text-decoration: underline;
-  }
+button {
+  cursor: pointer;
+}
+
+input[type=text],
+input[type=email],
+input[type=password],
+input[type=search],
+input[type=telephone],
+input[type=tel],
+input[type=number],
+textarea {
+  font-family: var.$fontFamilyDefault;
 }
 
 table {
-  border-collapse: initial;
-  border-spacing: 1px;
-  width: 100%;
-  margin-bottom: 1.5em;
-  background: #999;
+  max-width: 100%;
+  height: auto;
 }
-thead th {
-  background: #ccc;
+
+@media screen and (min-width: var.$tabletPortrait) {
+  html {
+    font-size: 10px;
+    scroll-padding-top: 8rem;
+  }
+  
+  body {
+    color: var.$font-color;
+    @include font.fontBase();
+  }
 }
-th, td {
-  padding: .5em .8em;
-  vertical-align: middle;
-  border-bottom: none;
-  text-align: center;
-  background: #fff;
-}
-th {font-weight:normal;}

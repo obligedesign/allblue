@@ -1,0 +1,206 @@
+@use "../partials/variables" as var;
+@use "../partials/mixins" as mix;
+
+// ============================================================
+// toppage
+// ============================================================
+
+/* top section */
+
+.common-section {
+  padding: 8rem 5rem;
+  background: var.$white;
+  position: relative;
+  
+  &__inner {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 128rem;
+  }
+}
+
+/* main visual */
+
+.main-visual {
+  position: sticky;
+  top: 10rem;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 10rem);
+  height: calc(100dvh - 10rem);
+  display: flex;
+  flex-flow: row wrap;
+  
+  &-title {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0,-50%);
+    z-index: 1;
+    
+    p {
+      line-height: 1;
+      width: fit-content;
+      padding: 2.4rem 3.2rem;
+      background: var.$white;
+      font-size: 4rem;
+      font-weight: 700;
+      letter-spacing: .15em;
+    }
+  }
+  
+  &-image {
+    margin: 0 0 0 auto;
+    width: 90%;
+    height: 100%;
+    position: relative;
+    border-radius: 3.2rem 0 0 0;
+    overflow: hidden;
+    
+    &::before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, .3);
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  
+  &-scroll {
+    position: absolute;
+    left: 2.8rem;
+    bottom: 1rem;
+    height: 5rem;
+    
+    span {
+      position: absolute;
+      left: -.5rem;
+      top: -5.2rem;
+      color: var.$white;
+      font-size: 1.2rem;
+      line-height: 1;
+      letter-spacing: .12rem;
+      writing-mode: vertical-lr;
+    }
+    
+    &::after {
+      content: "";
+      width: min(.1rem, 1px);
+      height: 3rem;
+      position: absolute;
+      top: 0;
+      background: var.$white;
+      animation: pathmove 1.4s ease-in-out infinite;
+      opacity: 0;
+    }
+    
+    @keyframes pathmove {
+      0% {
+        height: 0;
+        top: 0;
+        opacity: 0;
+      }
+      30% {
+        height: 3rem;
+        opacity: 1;
+      }
+      100% {
+        height: 0;
+        top: 5rem;
+        opacity: 0;
+      }
+    }
+  }
+}
+
+/* news */
+
+.top-news {
+  &__inner {
+    max-width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 0 4rem;
+  }
+  
+  &__head {
+    width: 38rem;
+    display: flex;
+    flex-flow: column;
+    gap: 1.2rem 0;
+    justify-content: center;
+    align-items: center;
+    
+    &-title {
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      font-size: 2.8rem;
+      font-weight: 700;
+      
+      span {
+        font-size: 1.2rem;
+      }
+    }
+  }
+  
+  &__content {
+    width: calc(100% - 38rem - 4rem);
+  }
+}
+
+/* result */
+
+.top-result {
+  position: relative;
+  
+  &:before {
+    content: "";
+    width: 90%;
+    height: 100%;
+    background: var.$brand-color;
+    border-radius: 0 3.2rem 3.2rem 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  &__inner {
+    position: relative;
+  }
+  
+  &__content {
+    .spotlight-instagram-feed {
+    
+    }
+    
+    .FeedLayout__wrapper {
+      padding: 4rem!important;
+      border-radius: 3.6rem 0 0 3.6rem;
+    }
+  }
+}
+
+@media screen and (max-width:var.$tabletMiddleSize) {
+  .main-visual {
+    top: 8rem;
+    height: calc(100vh - 8rem);
+    height: calc(100dvh - 8rem);
+    
+    &-title {
+      p {
+        font-size: 3.2rem;
+      }
+    }
+  }
+}

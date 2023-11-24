@@ -1,4 +1,5 @@
 import { ua } from './modules/ua'
+import { drawerMenuToggle, drawerMenuClick } from './modules/drawer-menu'
 import inView from 'in-view'
 import smoothscroll from 'smoothscroll-polyfill'
 import Swiper from 'swiper/bundle'
@@ -34,9 +35,8 @@ class App {
     // this.setViewMode()
 
     // ナビゲーション開閉
-    document.querySelector('.nav-trigger').addEventListener('click', () => {
-      document.querySelector('body').classList.toggle(klass.nav)
-    })
+    drawerMenuToggle()
+    drawerMenuClick()
 
     inView('.inview').on('enter', (el) => {
       el.classList.add('is-view')

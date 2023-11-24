@@ -552,6 +552,24 @@ var ua = {
   }
 };
 
+;// CONCATENATED MODULE: ./src/assets/js/modules/drawer-menu.js
+var drawerMenuToggle = function drawerMenuToggle() {
+  var drawerMenuButton = document.querySelectorAll('[data-drawer-toggle-button]');
+  drawerMenuButton.forEach(function (button) {
+    button.addEventListener('click', function () {
+      document.querySelector('body').classList.toggle('view-nav');
+    });
+  });
+};
+var drawerMenuClick = function drawerMenuClick() {
+  var drawerMenuItem = document.querySelectorAll('[data-drawer-meue] ul li a');
+  drawerMenuItem.forEach(function (button) {
+    button.addEventListener('click', function () {
+      document.querySelector('body').classList.remove('view-nav');
+    });
+  });
+};
+
 // EXTERNAL MODULE: ./node_modules/in-view/dist/in-view.min.js
 var in_view_min = __webpack_require__(440);
 var in_view_min_default = /*#__PURE__*/__webpack_require__.n(in_view_min);
@@ -11402,6 +11420,7 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
 
 
 
+
 var klass = {
   active: 'is-active',
   fixed: 'is-fixed',
@@ -11435,9 +11454,8 @@ var App = /*#__PURE__*/function () {
       // this.setViewMode()
 
       // ナビゲーション開閉
-      document.querySelector('.nav-trigger').addEventListener('click', function () {
-        document.querySelector('body').classList.toggle(klass.nav);
-      });
+      drawerMenuToggle();
+      drawerMenuClick();
       in_view_min_default()('.inview').on('enter', function (el) {
         el.classList.add('is-view');
       });
