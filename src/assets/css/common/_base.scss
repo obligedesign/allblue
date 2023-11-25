@@ -23,6 +23,12 @@ body {
   }
 }
 
+@media screen and (max-width:var.$pcMiddleWindow) {
+  body {
+    margin-top: 6.4rem;
+  }
+}
+
 a {
   cursor: pointer;
 }

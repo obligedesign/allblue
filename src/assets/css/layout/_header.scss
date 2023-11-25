@@ -85,6 +85,7 @@
         display: block;
         width: 2rem;
         height: 2rem;
+        line-height: 1;
         @include mix.hoverOpacity();
         
         svg {
@@ -109,5 +110,31 @@
   /* sns navigation */
   .sns-navigation {
     margin: 0 0 0 auto;
+  }
+}
+
+@media screen and (max-width:var.$tabletPortrait) {
+  .header {
+    height: 6.4rem;
+    padding: 0 1.4rem;
+    
+    &__inner {
+      gap: 0 2rem;
+    }
+    
+    &-logo {
+      width: 14rem;
+    }
+  }
+  
+  .sns-navigation {
+    ul {
+      li {
+        a {
+          width: 1.8rem;
+          height: 1.8rem;
+        }
+      }
+    }
   }
 }

@@ -1,0 +1,40 @@
+@use "../partials/variables" as var;
+@use "../partials/mixins" as mix;
+
+// ============================================================
+// section
+// ============================================================
+
+.top-section {
+  padding: 8rem 5rem;
+  background: var.$white;
+  position: relative;
+  
+  &__inner {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 128rem;
+  }
+}
+
+.common-section{
+  padding: 8rem 5rem;
+  background: var.$white;
+  position: relative;
+  
+  &__inner {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 90rem;
+  }
+}
+
+@media screen and (max-width: var.$tabletPortrait) {
+  .top-section {
+    padding: 6rem 1.4rem;
+  }
+  
+  .common-section {
+    padding: 6rem 1.4rem;
+  }
+}

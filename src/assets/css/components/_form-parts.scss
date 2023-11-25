@@ -1,0 +1,130 @@
+@use "../partials/variables" as var;
+@use "../partials/mixins" as mix;
+
+/* ===================================
+// form table
+// =================================== */
+
+.form-table {
+  margin-bottom: 4rem;
+  width: 100%;
+  
+  th,
+  td {
+    padding: 3.2rem 0;
+  }
+  
+  th {
+    width: 23.4rem;
+    padding-right: 2rem;
+    vertical-align: top;
+    
+    span {
+      margin-right: .8rem;
+      display: inline-block;
+      padding: 0 1.6rem;
+      background: var.$brand-color;
+      color: var.$white;
+      font-size: 12px;
+      border-radius: 99rem;
+      
+      &.is-required {
+        background: var.$red;
+      }
+    }
+  }
+  
+  td {
+    width: calc(100% - 234px - 20px);
+  }
+}
+
+/* ===================================
+// input
+// =================================== */
+
+@mixin reset {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  @include reset();
+  width: 100%;
+  padding: .8rem 1.2rem;
+  border: max(.1rem, 1px) solid var.$gray400;
+  border-radius: .4rem;
+  font-size: 14px;
+  letter-spacing: .05em;
+  line-height: 1.8;
+  
+  &::-webkit-input-placeholder,
+  &:-ms-input-placeholder,
+  &::placeholder {
+    color: var.$gray400;
+  }
+}
+
+input[type="text"],
+input[type="email"], {
+  height: 4rem;
+}
+
+textarea {
+  height: 16rem;
+}
+
+// checkbox
+
+input[type=checkbox] {
+  appearance: none;
+  display: none;
+  
+  & + span {
+    padding-left: 2.8rem;
+    font-weight: 500;
+    position: relative;
+    cursor: pointer;
+    
+    &::before {
+      margin-top: -1rem;
+      background: var.$white;
+      border: max(.1rem,1px) solid #231815;
+      content: '';
+      display: block;
+      width: 2rem;
+      height: 2rem;
+      position: absolute;
+      top: 50%;
+      left: 0;
+    }
+    
+    &::after {
+      margin-top: -7px;
+      content: '';
+      display: block;
+      width: .5rem;
+      height: 1.2rem;
+      border-right: .2rem solid var.$font-color;
+      border-bottom: .2rem solid var.$font-color;
+      position: absolute;
+      top: 50%;
+      left: .8rem;
+      transform: rotate(45deg);
+      opacity: 0;
+    }
+  }
+  
+  &:checked + span::after {
+    opacity: 1;
+  }
+}

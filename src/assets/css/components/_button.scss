@@ -62,3 +62,45 @@
     }
   }
 }
+
+.button02 {
+  min-width: 28rem;
+  padding: .8rem 1.6rem;
+  background: var.$brand-color;
+  border: .2rem solid var.$brand-color;
+  color: var.$white;
+  font-size: 1.4rem;
+  font-weight: 700;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0 1rem;
+  position: relative;
+  @include mix.transitionDuration();
+  
+  &::after {
+    content: "";
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    background: url("../img/common/icon-arrow-down_white.svg") no-repeat center center;
+    background-size: contain;
+    position: absolute;
+    top: 50%;
+    right: 1.6rem;
+    transform: translate(0,-50%) rotate(-90deg);
+    @include mix.transitionDuration();
+  }
+  
+  @media (hover: hover) {
+    &:hover {
+      color: var.$brand-color;
+      background: var.$white;
+      
+      &::after {
+        right: 1rem;
+      }
+    }
+  }
+}

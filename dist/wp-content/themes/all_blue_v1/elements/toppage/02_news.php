@@ -1,31 +1,43 @@
-<section id="news" class="common-section top-news">
-	<div class="common-section__inner top-news__inner">
+<section id="news" class="top-section top-news">
+	<div class="top-section__inner top-news__inner">
 		<div class="top-news__head">
 			<h2 class="top-news__head-title">NEWS<span>お知らせ</span></h2>
 		</div>
 		<div class="top-news__content">
-			<ul class="news-list">
-				<li>
-					<a href="">
-						<time>2222.22.22</time>
-						<h3>ダミータイトルになりますダミータイトルになります。</h3>
-					</a>
-				</li>
-				<li>
-					<a href="">
-						<time>2222.22.22</time>
-						<h3>ダミータイトルになりますダミータイトルになります。</h3>
-					</a>
-				</li>
-				<li>
-					<a href="">
-						<time>2222.22.22</time>
-						<h3>ダミータイトルになりますダミータイトルになります。</h3>
-					</a>
-				</li>
-			</ul>
+			<?php
+			query_posts(
+					array(
+							'post_type' => array('post'),
+							'posts_per_page' => 3,
+							'paged' => get_query_var('paged'),
+					)
+			);
+			if (have_posts()) {
+				echo '<ul class="news-list">';
+				while (have_posts()) {
+					the_post();
+					?>
+					<li>
+						<a href="<?php the_permalink() ?>">
+							<time class="news-list__date" datetime="<?php echo get_the_date('Y-n-j'); ?>">
+								<?php echo get_the_date('Y.n.j'); ?>
+							</time>
+							<h3 class="news-list__title">
+								<?php the_title(); ?>
+							</h3>
+						</a>
+					</li>
+					<?php
+				}
+				echo '</ul>';
+			} else {
+				echo '<p>お知らせがありません</p>';
+			}
+			wp_reset_query();
+			?>
+
 			<div class="button-group-right">
-				<a href="" class="button01"><span>READ MORE</span></a>
+				<a href="<?php echo home_url('/news/'); ?>" class="button01"><span>READ MORE</span></a>
 			</div>
 		</div>
 	</div>

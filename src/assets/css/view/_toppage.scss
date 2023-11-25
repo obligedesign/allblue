@@ -5,20 +5,6 @@
 // toppage
 // ============================================================
 
-/* top section */
-
-.common-section {
-  padding: 8rem 5rem;
-  background: var.$white;
-  position: relative;
-  
-  &__inner {
-    margin: 0 auto;
-    width: 100%;
-    max-width: 128rem;
-  }
-}
-
 /* main visual */
 
 .main-visual {
@@ -35,7 +21,7 @@
     position: absolute;
     top: 50%;
     left: 0;
-    transform: translate(0,-50%);
+    transform: translate(0, -50%);
     z-index: 1;
     
     p {
@@ -44,7 +30,7 @@
       padding: 2.4rem 3.2rem;
       background: var.$white;
       font-size: 4rem;
-      font-weight: 700;
+      font-weight: 900;
       letter-spacing: .15em;
     }
   }
@@ -162,6 +148,7 @@
 /* result */
 
 .top-result {
+  padding-bottom: 12rem;
   position: relative;
   
   &:before {
@@ -185,13 +172,13 @@
     }
     
     .FeedLayout__wrapper {
-      padding: 4rem!important;
+      padding: 4rem !important;
       border-radius: 3.6rem 0 0 3.6rem;
     }
   }
 }
 
-@media screen and (max-width:var.$tabletMiddleSize) {
+@media screen and (max-width: var.$tabletMiddleSize) {
   .main-visual {
     top: 8rem;
     height: calc(100vh - 8rem);
@@ -204,3 +191,69 @@
     }
   }
 }
+
+@media screen and (max-width: var.$pcMiddleWindow) {
+  .top-news {
+    &__head {
+      width: 20rem;
+    }
+    
+    &__content {
+      width: calc(100% - 20rem - 4rem);
+    }
+  }
+}
+
+@media screen and (max-width: var.$tabletPortrait) {
+  
+  .main-visual {
+    top: 6.4rem;
+    height: calc(100vh - 6.4rem);
+    height: calc(100dvh - 6.4rem);
+    
+    &-title {
+      p {
+        margin-top: -1px;
+        padding: 1.2rem 1.6rem;
+        font-size: 2.6rem;
+      }
+    }
+    
+    &-image {
+      border-radius: 2.4rem 0 0 0;
+    }
+  }
+  
+  .top-news {
+    &__head {
+      width: 100%;
+    }
+    
+    &__content {
+      width: 100%;
+    }
+  }
+  
+  .top-result {
+    .top-heading01 {
+      padding-right: 1.4rem;
+    }
+    
+    &:before {
+      width: 95%;
+      border-radius: 0 2.4rem 2.4rem 0;
+    }
+    
+    &__content {
+      .spotlight-instagram-feed {
+      
+      }
+      
+      .FeedLayout__wrapper {
+        padding: 2.8rem .8rem 2.8rem 2.8rem !important;
+        border-radius: 2.4rem 0 0 2.4rem;
+      }
+    }
+  }
+}
+

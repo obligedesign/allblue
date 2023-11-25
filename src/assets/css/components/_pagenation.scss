@@ -1,0 +1,45 @@
+@use "../partials/variables" as var;
+@use "../partials/mixins" as mix;
+
+// ============================================================ //
+// @ pagination
+// ============================================================ //
+
+.pagination {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0 .8rem;
+  
+  a {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+    font-size: 1.5rem;
+    font-weight: 500;
+    
+    svg {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      
+    }
+    
+    &.prev {
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+    
+    &.is-current {
+      color: var.$brand-color;
+      font-weight: 700;
+    }
+  }
+}
+

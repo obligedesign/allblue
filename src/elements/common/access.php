@@ -6,9 +6,9 @@
 		<div class="access__content">
 			<h2>ACCESS<span>アクセス</span></h2>
 			<h3>住所</h3>
-			<p>〒800-0323<br>福岡県京都郡苅田町与原3丁目1−1</p>
+			<p><?php the_field('info_address', 'option'); ?></p>
 			<h3>駐車場</h3>
-			<p>あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。</p>
+			<p><?php the_field('info_parking', 'option'); ?></p>
 		</div>
 	</div>
 </section>

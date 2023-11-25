@@ -104,3 +104,45 @@
     }
   }
 }
+
+@media screen and (max-width:var.$tabletMiddleSize) {
+  .reserve {
+    &__inner {
+      flex-flow: column;
+      gap: 4rem 0;
+    }
+    
+    &__head {
+      width: 100%;
+      
+      &-button {
+        max-width: 100%;
+        flex-flow: row wrap;
+        justify-content: center;
+        gap: 1.6rem;
+        
+        a {
+          max-width: 30rem;
+        }
+      }
+    }
+    
+    &__content {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: var.$tabletPortrait) {
+  .reserve {
+    &__box {
+      margin-top: 0;
+      padding: 2rem;
+      
+      ul {
+        margin-left: 1.5rem;
+        font-size: 1.2rem;
+      }
+    }
+  }
+}

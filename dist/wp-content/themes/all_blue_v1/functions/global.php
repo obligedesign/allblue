@@ -246,3 +246,45 @@ add_filter('wpcf7_autop_or_not', 'wpcf7_autop_return_false');
 function wpcf7_autop_return_false() {
 	return false;
 }
+
+/**
+ * カスタム投稿タイプのラベル変更
+ */
+function post_has_archive( $args, $post_type ) {
+	if ( 'post' == $post_type ) {
+		$args['rewrite'] = true;
+		$args['has_archive'] = 'news';
+		$args['label'] = 'お知らせ';
+	}
+	return $args;
+}
+add_filter( 'register_post_type_args', 'post_has_archive', 10, 2 );
+
+/**
+ * 投稿から基本タクソノミー削除
+ */
+function my_unregister_taxonomies() {
+	global $wp_taxonomies;
+	/**
+	 * 投稿機能から「カテゴリー」を削除
+	 */
+	if ( ! empty( $wp_taxonomies['category']->object_type ) ) {
+		foreach ( $wp_taxonomies['category']->object_type as $i => $object_type ) {
+			if ( 'post' === $object_type ) {
+				unset( $wp_taxonomies['category']->object_type[ $i ] );
+			}
+		}
+	}
+	/**
+	 * 投稿機能から「タグ」を削除
+	 */
+	if ( ! empty( $wp_taxonomies['post_tag']->object_type ) ) {
+		foreach ( $wp_taxonomies['post_tag']->object_type as $i => $object_type ) {
+			if ( 'post' === $object_type ) {
+				unset( $wp_taxonomies['post_tag']->object_type[ $i ] );
+			}
+		}
+	}
+	return true;
+}
+add_action( 'init', 'my_unregister_taxonomies' );

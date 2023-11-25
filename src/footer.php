@@ -1,5 +1,7 @@
 <?php
-get_template_part('elements/common/reserve');
+if (!(is_archive() || is_404() || is_page())) {
+	get_template_part('elements/common/reserve');
+}
 get_template_part('elements/common/access'); ?>
 </main>
 <footer class="footer">
