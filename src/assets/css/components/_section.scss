@@ -29,6 +29,10 @@
   }
 }
 
+.single-section {
+  border-bottom: min(.1rem,1px) solid var.$gray300;
+}
+
 @media screen and (max-width: var.$tabletPortrait) {
   .top-section {
     padding: 6rem 1.4rem;

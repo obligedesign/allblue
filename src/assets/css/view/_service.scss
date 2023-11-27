@@ -1,0 +1,139 @@
+@use "../partials/variables" as var;
+@use "../partials/mixins" as mix;
+
+// ============================================================
+// service
+// ============================================================
+
+.service {
+  border-bottom: min(.1rem, 1px) solid var.$gray200;
+  
+  &__description {
+    margin-bottom: 8rem;
+    text-align: center;
+  }
+  
+  &__item {
+    margin-bottom: 8rem;
+    
+    > .service__content:not(:last-child) {
+      margin-bottom: 8rem;
+    }
+  }
+  
+  &__title {
+    margin-bottom: 2rem;
+    padding: .8rem 1.6rem;
+    background: var.$brand-color;
+    color: var.$white;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  
+  &__content {
+    border: min(.1rem, 1px) solid var.$gray200;
+  }
+  
+  &__area {
+    padding: .6rem 2rem;
+    background: var.$gray200;
+    font-size: 1.6rem;
+    font-weight: 700;
+    position: relative;
+    
+    &::before {
+      content: "";
+      display: block;
+      background: var.$gray400;;
+      width: .8rem;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+  
+  &__table {
+    width: 100%;
+    
+    tr {
+      th, td {
+        padding: 1.2rem 2rem;
+        border-bottom: min(.1rem, 1px) solid var.$gray200;
+      }
+      
+      th {
+        width: 20rem;
+        font-weight: 700;
+      }
+      
+      td {
+        width: calc(100% - 20rem);
+      }
+    }
+  }
+  
+  .button-group {
+    gap: 2rem;
+    
+    &:not(:last-child) {
+      margin-bottom: 8rem;
+    }
+  }
+}
+
+@media screen and (max-width: var.$tabletPortrait) {
+  .service {
+    &__description {
+      margin-bottom: 6rem;
+    }
+    
+    &__item {
+      margin-bottom: 6rem;
+      
+      > .service__content:not(:last-child) {
+        margin-bottom: 6rem;
+      }
+    }
+    
+    &__content {
+      border: none;
+    }
+    
+    &__area {
+      margin-bottom: 2rem;
+    }
+    
+    &__table {
+      border: min(.1rem, 1px) solid var.$gray200;
+      width: 100%;
+      
+      tr {
+        th, td {
+          padding: .8rem 2rem;
+          display: block;
+        }
+        
+        th {
+          width: 100%;
+          background: var.$gray50;
+        }
+        
+        td {
+          width: 100%;
+        }
+      }
+    }
+    
+    .button-group {
+      flex-flow: column;
+      align-items: center;
+      gap: 1.2rem;
+      
+      .button03 {
+        width: 30rem;
+        max-width: 100%;
+      }
+    }
+  }
+}

@@ -1,9 +1,9 @@
 <section id="news" class="top-section top-news">
 	<div class="top-section__inner top-news__inner">
-		<div class="top-news__head">
+		<div class="top-news__head inview js-fadeLeft">
 			<h2 class="top-news__head-title">NEWS<span>お知らせ</span></h2>
 		</div>
-		<div class="top-news__content">
+		<div class="top-news__content inview js-fadeLeft">
 			<?php
 			query_posts(
 					array(

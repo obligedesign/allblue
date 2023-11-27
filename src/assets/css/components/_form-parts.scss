@@ -61,7 +61,7 @@ textarea {
   @include reset();
   width: 100%;
   padding: .8rem 1.2rem;
-  border: max(.1rem, 1px) solid var.$gray400;
+  border: min(.1rem, 1px) solid var.$gray400;
   border-radius: .4rem;
   font-size: 14px;
   letter-spacing: .05em;
@@ -98,7 +98,7 @@ input[type=checkbox] {
     &::before {
       margin-top: -1rem;
       background: var.$white;
-      border: max(.1rem,1px) solid #231815;
+      border: min(.1rem,1px) solid #231815;
       content: '';
       display: block;
       width: 2rem;

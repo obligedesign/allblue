@@ -1,6 +1,6 @@
-@import 'display';
-@import 'variables';
-@import 'mixin';
-@import 'functions';
-@import 'fontSet';
-@import 'text';
+@use 'animation';
+@use 'display';
+@use 'variables';
+@use 'functions';
+@use 'fontSet';
+@use 'text';

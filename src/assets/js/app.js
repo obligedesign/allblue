@@ -2,7 +2,7 @@ import { ua } from './modules/ua'
 import { drawerMenuToggle, drawerMenuClick } from './modules/drawer-menu'
 import inView from 'in-view'
 import smoothscroll from 'smoothscroll-polyfill'
-import Swiper from 'swiper/bundle'
+// import Swiper from 'swiper/bundle'
 
 const klass = {
   active: 'is-active',

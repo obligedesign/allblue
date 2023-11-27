@@ -1,0 +1,131 @@
+@use './mixins' as mix;
+
+.js-fadeUp {
+  opacity: 0;
+  transform: translateY(30px);
+  @include mix.transitionDuration(0.8s);
+
+  &.is-view {
+    opacity: 1;
+    transform: translateY(0);
+    @include mix.transitionDuration();
+
+    transition-delay: 0.3s;
+  }
+}
+
+.js-fadeLeft {
+  opacity: 0;
+  transform: translateX(-30px);
+  @include mix.transitionDuration(0.8s);
+
+  &.is-view {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.3s;
+  }
+}
+
+.js-fadeIn {
+  opacity: 0;
+  @include mix.transitionDuration(0.8s);
+
+  &.is-view {
+    opacity: 1;
+    transition-delay: 0.3s;
+  }
+}
+
+.top-heading01 {
+  p {
+    opacity: 0;
+    transform: translateY(30px);
+    @include mix.transitionDuration(0.8s);
+  }
+
+  h2 {
+    opacity: 0;
+    transform: translateX(-30px);
+    @include mix.transitionDuration(0.8s);
+  }
+
+  &::after {
+    opacity: 0;
+    flex-grow: 0;
+    @include mix.transitionDuration(0.8s);
+  }
+
+  &.is-view {
+    p {
+      opacity: 1;
+      transform: translateY(0);
+      @include mix.transitionDuration();
+
+      transition-delay: 0.3s;
+    }
+
+    h2 {
+      opacity: 1;
+      transform: translateX(0);
+      transition-delay: 0.3s;
+    }
+
+    &::after {
+      flex-grow: 1;
+      transition-delay: 0.3s;
+      opacity: 1;
+    }
+  }
+}
+
+.js-inview-works-detail {
+  > a {
+    > *:not(.top-works-details__thumb) {
+      opacity: 0;
+      @include mix.transitionDuration(0.8s);
+    }
+  }
+
+  &.is-view {
+    > a {
+      > *:not(.top-works-details__thumb) {
+        opacity: 1;
+        transition-delay: 0.3s;
+      }
+    }
+  }
+}
+
+.js-inview-top-business-detail {
+  .top-business-detail__lead {
+    opacity: 0;
+    @include mix.transitionDuration(0.8s);
+  }
+
+  .top-business-detail__title {
+    opacity: 0;
+    @include mix.transitionDuration(0.8s);
+  }
+
+  .top-business-detail__desc {
+    opacity: 0;
+    @include mix.transitionDuration(0.8s);
+  }
+
+  &.is-view {
+    .top-business-detail__lead {
+      opacity: 1;
+      transition-delay: 0.6s;
+    }
+
+    .top-business-detail__title {
+      opacity: 1;
+      transition-delay: 0.9s;
+    }
+
+    .top-business-detail__desc {
+      opacity: 1;
+      transition-delay: 1.2s;
+    }
+  }
+}

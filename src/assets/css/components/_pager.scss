@@ -1,0 +1,116 @@
+@use "../partials/variables" as var;
+@use "../partials/mixins" as mix;
+
+// ============================================================ //
+// @ pager
+// ============================================================ //
+
+.pager {
+  margin: 8rem auto 0;
+  width: 100%;
+  max-width: 42.2rem;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  
+  &-left,
+  &-right {
+    
+    a {
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+      gap: 0 .8rem;
+      @include mix.hoverOpacity();
+    }
+    
+    
+    &.is-disabled {
+      a {
+        opacity: .4;
+        pointer-events: none;
+      }
+    }
+  }
+  
+  &-left {
+    margin: 0 auto 0 0;
+    
+    a {
+      &::before {
+        content: "";
+        display: block;
+        width: 1.2rem;
+        height: 1.2rem;
+        background-size: contain;
+        background: url(../img/common/icon-arrow-down.svg) center center no-repeat;
+        transform: rotate(90deg);
+        @include mix.transitionDuration();
+      }
+      
+      @media (hover: hover) {
+        &:hover {
+          &::before {
+            transform: translateX(-.4rem) rotate(90deg);
+          }
+        }
+      }
+    }
+  }
+  
+  &-center {
+    a {
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+      gap: 0 1rem;
+      @include mix.hoverOpacity();
+      
+      &::before {
+        content: "";
+        display: block;
+        width: 1.6rem;
+        height: 1.7rem;
+        background-size: contain;
+        background: url(../img/common/icon_home.svg) center center no-repeat;
+        @include mix.transitionDuration();
+      }
+      
+      @media (hover: hover) {
+        &:hover {
+          &::before {
+            transform: scale(1.2);
+          }
+        }
+      }
+    }
+  }
+  
+  &-right {
+    margin: 0 0 0 auto;
+    
+    
+    a {
+      &::after {
+        content: "";
+        display: block;
+        width: 1.2rem;
+        height: 1.2rem;
+        background-size: contain;
+        background: url(../img/common/icon-arrow-down.svg) center center no-repeat;
+        transform: rotate(-90deg);
+        @include mix.transitionDuration();
+      }
+      
+      @media (hover: hover) {
+        &:hover {
+          &::before {
+            transform: translateX(.4rem) rotate(90deg);
+          }
+        }
+      }
+    }
+  }
+}
+
+

@@ -1,6 +1,6 @@
 <section id="reserve" class="top-section reserve">
 	<div class="top-section__inner reserve__inner">
-		<div class="reserve__head">
+		<div class="reserve__head inview js-fadeLeft">
 			<h2 class="reserve__head-title">RESERVE<span>ご予約</span></h2>
 			<p class="reserve__head-description">予約はお電話またはLINEから承っております。<br>お気軽にお問い合わせください。</p>
 			<div class="reserve__head-button">
@@ -25,10 +25,10 @@
 				</a>
 			</div>
 		</div>
-		<div class="reserve__content">
+		<div class="reserve__content inview js-fadeLeft">
 			<?php echo do_shortcode('[calendar id="5"]'); ?>
 		</div>
-		<div class="reserve__box">
+		<div class="reserve__box inview js-fadeLeft">
 			<h3>注意事項</h3>
 				<?php if (have_rows('reserve_note-list', 'option')) {
 					echo '<ul>';

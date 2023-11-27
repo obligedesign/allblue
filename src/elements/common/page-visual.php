@@ -8,6 +8,9 @@ if (is_archive()) {
 } else if (is_page() && !is_page('service')) {
 	$title = get_the_title();
 	$lead = 'CONTACT';
+} else if (is_single()) {
+	$title = get_the_title();
+	$lead = 'NEWS';
 }
 ?>
 

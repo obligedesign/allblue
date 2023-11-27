@@ -1,5 +1,5 @@
 <?php
-if (!(is_archive() || is_404() || is_page())) {
+if (!(is_archive() || is_404() || is_page('contact') || is_page('thanks'))) {
 	get_template_part('elements/common/reserve');
 }
 get_template_part('elements/common/access'); ?>
