@@ -117,4 +117,62 @@
       font-size: 1.3rem;
     }
   }
+  
+  .wp-block-buttons {
+    gap: 2rem;
+  }
+  
+  .wp-block-button {
+    &__link {
+      max-width: 28rem;
+      min-width: 28rem;
+      flex: 1;
+      padding: 1.6rem;
+      background: var.$brand-color;
+      border-radius: 99rem;
+      color: var.$white;
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 0 1rem;
+      position: relative;
+      text-decoration: none;
+      @include mix.transitionDuration();
+      
+      &::after {
+        content: "";
+        display: block;
+        width: 1rem;
+        height: 1rem;
+        background: url("../img/common/icon-arrow-down_white.svg") no-repeat center center;
+        background-size: contain;
+        position: absolute;
+        top: 50%;
+        right: 1.6rem;
+        transform: translate(0, -50%) rotate(-90deg);
+        opacity: 1;
+        @include mix.transitionDuration();
+      }
+      
+      svg {
+        width: 2.4rem;
+        height: auto;
+        object-fit: contain;
+      }
+      
+      @media (hover: hover) {
+        &:hover {
+          opacity: .6;
+          
+          &::after {
+            right: 1rem;
+          }
+        }
+      }
+    }
+  }
 }

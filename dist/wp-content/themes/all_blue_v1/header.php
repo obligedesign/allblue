@@ -34,7 +34,7 @@ if (is_home() || is_front_page()) {
 	$pageClass='page-under';
 }
 echo ' class="'.$pageClass.' pageID-' . get_the_ID() . '"'; ?>><a id="pagetop"></a>
-<span class="openLoader"><span class="loader is-active"></span></span>
+<div class="loader"><span class="spinner"></span><p>ALL BLUE</p></div>
 
 <?php
 get_template_part('elements/common/header');

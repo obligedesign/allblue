@@ -8,8 +8,8 @@
 .drawer-menu-button {
   display: none;
   position: relative;
-  width: 5rem;
-  height: 5rem;
+  width: 3.6rem;
+  height: 3.6rem;
   cursor: pointer;
   
   svg {
@@ -60,7 +60,7 @@
     display: block;
     position: absolute;
     top: 2rem;
-    right: 2rem;
+    right: 2.6rem;
   }
   
   &-navigation {
@@ -120,11 +120,6 @@
 }
 
 @media screen and (max-width: var.$tabletPortrait) {
-  .drawer-menu-button {
-    width: 3.6rem;
-    height: 3.6rem;
-  }
-  
   .drawer-menu {
     padding: 8rem 2.8rem 4rem;
     width: 100%;

@@ -1,0 +1,79 @@
+@use "../partials/variables" as var;
+@use "../partials/mixins" as mix;
+
+// ============================================================
+// common
+// ============================================================
+
+.reserve-move-button {
+  width: 10rem;
+  height: 10rem;
+  background: var.$bg-black;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  transform: translateX(calc(100% + 2rem));
+  @include mix.transitionDuration();
+  
+  .is-scrolled &{
+    transform: translateX(0);
+  }
+  
+  a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    gap: .2rem 0;
+    
+    @media (hover: hover) {
+      &:hover {
+        svg {
+          transform: translateX(-.6rem);
+        }
+      }
+    }
+  }
+  
+  svg {
+    width: 3.6rem;
+    height: auto;
+    @include mix.transitionDuration();
+  }
+  
+  p {
+    color: var.$white;
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.5;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: var.$tabletPortrait) {
+  .reserve-move-button {
+    width: 9rem;
+    height: 9rem;
+    bottom: 1rem;
+    right: 1rem;
+    transform: translateX(calc(100% + 1rem));
+    
+    svg {
+      width: 3.6rem;
+      height: auto;
+      @include mix.transitionDuration();
+    }
+    
+    p {
+      color: var.$white;
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.5;
+      text-align: center;
+    }
+  }
+}
+

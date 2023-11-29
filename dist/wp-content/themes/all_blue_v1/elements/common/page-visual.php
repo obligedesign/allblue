@@ -16,7 +16,11 @@ if (is_archive()) {
 
 <div class="page-visual">
 	<figure class="page-visual__background">
-		<img src="https://picsum.photos/1440/800" alt="" class="1440" height="400">
+		<?php if (is_single() && get_the_post_thumbnail_url(get_the_ID())) {
+			echo '<img src="' . get_the_post_thumbnail_url(get_the_ID(), 'full') . '" alt="" class="1440" height="400">';
+		} else {
+			echo '<img src="' . get_template_directory_uri() . '/assets/img/common/no-image.jpeg" alt="" class="1440" height="400" class="no-image">';
+		} ?>
 	</figure>
 	<div class="page-visual__heading">
 		<h1 class="page-visual__heading-title"><?php echo $title; ?></h1>

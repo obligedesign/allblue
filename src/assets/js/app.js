@@ -1,8 +1,9 @@
 import { ua } from './modules/ua'
 import { drawerMenuToggle, drawerMenuClick } from './modules/drawer-menu'
-import inView from 'in-view'
-import smoothscroll from 'smoothscroll-polyfill'
-// import Swiper from 'swiper/bundle'
+import { rellaxAnimation } from './modules/rellax'
+import { inviewAnimation } from './modules/inview'
+import { scrollAddClass } from './modules/scrollAddClass'
+import smoothScroll from 'smoothscroll-polyfill'
 
 const klass = {
   active: 'is-active',
@@ -38,17 +39,20 @@ class App {
     drawerMenuToggle()
     drawerMenuClick()
 
-    inView('.inview').on('enter', (el) => {
-      el.classList.add('is-view')
-    })
-    inView.offset(100)
+    // invie
+    inviewAnimation()
+
+    //rellax
+    rellaxAnimation()
+
+    scrollAddClass()
   }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   window.dmrt = new App()
 
-  smoothscroll.polyfill()
+  smoothScroll.polyfill()
   Array.from(document.querySelectorAll('.js-smooth-scroll')).forEach((link) => {
     link.addEventListener('click', (e) => {
       const ankerTarget = e.target
@@ -76,5 +80,5 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 window.addEventListener('load', () => {
-  // document.querySelector('.loader').classList.add(klass.hidden)
+  document.querySelector('.loader').classList.add(klass.hidden)
 })

@@ -50,6 +50,20 @@
     @include mix.transitionDuration();
   }
   
+  &.is-white {
+    color: var.$white;
+    
+    &::before {
+      background: var.$white;
+    }
+    
+    &::after {
+      background: url("../img/common/icon-arrow-down_white.svg") no-repeat center center;
+      background-size: contain;
+    }
+    
+  }
+  
   @media (hover: hover) {
     &:hover {
       &::before {

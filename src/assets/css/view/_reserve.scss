@@ -56,6 +56,7 @@
         gap: 1.6rem;
         color: var.$white;
         font-weight: 700;
+        @include mix.hoverOpacity();
         
         &.is-tel {
           background: var.$brand-color;
@@ -70,6 +71,81 @@
   
   &__content {
     width: calc(100% - 38rem - 4rem);
+    
+    .simcal-calendar {
+      thead {
+        tr {
+          th {
+            &.simcal-week-day-0 {
+              color: var.$red;
+            }
+            
+            &.simcal-week-day-6 {
+              color: var.$brand-color;
+            }
+          }
+        }
+      }
+      
+      tbody {
+        pointer-events: none;
+        
+        tr td {
+          padding: .4rem !important;
+          border: min(.1rem, 1px) solid var.$gray300;
+          
+          > div {
+            border: none !important;
+          }
+          
+          &:hover {
+            background: none !important;
+          }
+          
+          .simcal-day-label {
+            color: var.$font-color !important;
+            background: none !important;
+            text-align: right;
+          }
+          
+          &.simcal-weekday-0 {
+            .simcal-day-label {
+              color: var.$red !important;
+            }
+          }
+          
+          &.simcal-weekday-6 {
+            .simcal-day-label {
+              color: var.$brand-color !important;
+            }
+          }
+          
+          ul {
+            display: block!important;
+            
+            li {
+              font-size: 1.2rem;
+              background: var.$gray100;
+              border: none!important;
+              
+              .simcal-event-title {
+                font-size: 1rem!important;
+                letter-spacing: 0;
+                display: block!important;
+              }
+            }
+          }
+          
+          .simcal-event-details {
+            display: none!important;
+          }
+          
+          .simcal-events-dots {
+            display: none!important;
+          }
+        }
+      }
+    }
   }
   
   &__box {
@@ -105,7 +181,8 @@
   }
 }
 
-@media screen and (max-width:var.$tabletMiddleSize) {
+
+@media screen and (max-width: var.$pcWindow) {
   .reserve {
     &__inner {
       flex-flow: column;

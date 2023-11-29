@@ -1,0 +1,67 @@
+@use '../partials/variables' as var;
+@use '../partials/mixins' as mix;
+
+// ============================================================
+// loader
+// ============================================================
+
+.loader {
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem 0;
+  background: var.$brand-color;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9999;
+  opacity: 1;
+  @include mix.transitionDuration(0.4s);
+
+  p {
+    color: var.$white;
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 1;
+  }
+
+  &.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  .spinner {
+    width: 8rem;
+    height: 3rem;
+    --g: radial-gradient(farthest-side, #0000 calc(95% - 3px), #fff calc(100% - .3rem) 98%, #0000 101%) no-repeat;
+    background: var(--g), var(--g), var(--g);
+    background-size: 2rem 2rem;
+    animation: spinerAnimation 1s infinite alternate;
+  }
+  @keyframes spinerAnimation {
+    0% {
+      background-position: 0 50%, 50% 50%, 100% 50%;
+    }
+    20% {
+      background-position: 0 0, 50% 50%, 100% 50%;
+    }
+    40% {
+      background-position: 0 100%, 50% 0, 100% 50%;
+    }
+    60% {
+      background-position: 0 50%, 50% 100%, 100% 0;
+    }
+    80% {
+      background-position: 0 50%, 50% 50%, 100% 100%;
+    }
+    100% {
+      background-position: 0 50%, 50% 50%, 100% 50%;
+    }
+  }
+}

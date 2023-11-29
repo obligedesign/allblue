@@ -288,3 +288,11 @@ function my_unregister_taxonomies() {
 	return true;
 }
 add_action( 'init', 'my_unregister_taxonomies' );
+
+/**
+ * アイキャッチ画像を有効にする
+ */
+function theme_setup() {
+	add_theme_support('post-thumbnails');
+}
+add_action('after_setup_theme', 'theme_setup');

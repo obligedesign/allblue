@@ -98,7 +98,7 @@
   }
 }
 
-@media screen and (max-width:var.$tabletMiddleSize) {
+@media screen and (max-width: var.$tabletMiddleSize) {
   .header {
     height: 8rem;
   }
@@ -113,7 +113,7 @@
   }
 }
 
-@media screen and (max-width:var.$tabletPortrait) {
+@media screen and (max-width: var.$tabletPortrait) {
   .header {
     height: 6.4rem;
     padding: 0 1.4rem;

@@ -66,5 +66,8 @@
   },
   "browserslist": [
     "last 2 versions"
-  ]
+  ],
+  "dependencies": {
+    "rellax": "^1.12.1"
+  }
 }
