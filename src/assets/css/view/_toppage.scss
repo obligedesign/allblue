@@ -5,15 +5,20 @@
 // toppage
 // ============================================================
 
+.top-wrapper {
+  position: relative;
+}
+
 /* main visual */
 
 .main-visual {
   position: sticky;
+  z-index: -1;
   top: 10rem;
   left: 0;
   width: 100%;
   height: calc(100vh - 10rem);
-  height: calc(100dvh - 10rem);
+  height: calc(100svh - 10rem);
   display: flex;
   flex-flow: row wrap;
   align-items: center;
@@ -21,6 +26,7 @@
   &-title {
     position: absolute;
     left: 0;
+    top: 50%;
     transform: translate(0, -50%);
     z-index: 1;
     
@@ -200,7 +206,7 @@
   .main-visual {
     top: 8rem;
     height: calc(100vh - 8rem);
-    height: calc(100dvh - 8rem);
+    height: calc(100svh - 8rem);
     
     &-title {
       p {
@@ -223,12 +229,10 @@
 }
 
 @media screen and (max-width: var.$tabletPortrait) {
-  
   .main-visual {
     top: 6.4rem;
     height: calc(100vh - 6.4rem);
-    height: calc(100svh - 6.4rem);
-    
+    max-height: calc(100svh - 6.4rem);
     &-title {
       p {
         margin-top: -1px;

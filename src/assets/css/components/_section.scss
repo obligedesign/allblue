@@ -9,6 +9,7 @@
   padding: 8rem 5rem;
   background: var.$white;
   position: relative;
+  z-index: 1;
   
   &__inner {
     margin: 0 auto;
@@ -21,6 +22,7 @@
   padding: 8rem 5rem;
   background: var.$white;
   position: relative;
+  z-index: 1;
   
   &__inner {
     margin: 0 auto;

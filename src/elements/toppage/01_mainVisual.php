@@ -1,5 +1,5 @@
 <section class="main-visual">
-	<div class="main-visual-title rellax">
+	<div class="main-visual-title">
 		<p>北九州関門エリアの</p>
 		<p>ボートシーバス・アジング</p>
 		<p>ALLBLUE</p>

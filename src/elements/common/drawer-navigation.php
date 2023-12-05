@@ -14,7 +14,7 @@
 				<a href="<?php echo home_url('/news/'); ?>"><span>NEWS</span>お知らせ</a>
 			</li>
 			<li>
-				<a href="<?php echo home_url('/price/'); ?>"><span>SERVICE</span>料金・エリア</a>
+				<a href="<?php echo home_url('/service/'); ?>"><span>SERVICE</span>料金・エリア</a>
 			</li>
 			<li>
 				<a href="<?php echo home_url('/'); ?>#result"><span>RESULT</span>釣果情報</a>

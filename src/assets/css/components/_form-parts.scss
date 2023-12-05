@@ -128,3 +128,37 @@ input[type=checkbox] {
     opacity: 1;
   }
 }
+
+@media screen and (max-width: var.$tabletPortrait) {
+  .form-table {
+    th,
+    td {
+      display: block;
+      padding: .8rem 0;
+    }
+    
+    th {
+      width: 100%;
+      padding-right: 0;
+      vertical-align: top;
+      
+      span {
+        margin-right: .8rem;
+        display: inline-block;
+        padding: 0 1.6rem;
+        background: var.$brand-color;
+        color: var.$white;
+        font-size: 12px;
+        border-radius: 99rem;
+        
+        &.is-required {
+          background: var.$red;
+        }
+      }
+    }
+    
+    td {
+      width: 100%;
+    }
+  }
+}

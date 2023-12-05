@@ -20,6 +20,7 @@
 @mixin transitionDuration( $delayTime: 0.6s) {
   transition-duration: $delayTime;
   transition-property: all;
+  transition-timing-function: ease-in-out;
 }
 
 @mixin hoverOpacity($opacity: 0.6) {

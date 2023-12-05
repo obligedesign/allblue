@@ -296,3 +296,19 @@ function theme_setup() {
 	add_theme_support('post-thumbnails');
 }
 add_action('after_setup_theme', 'theme_setup');
+
+/**
+ * 自動pタグを無効にする
+ */
+remove_filter('the_content', 'wpautop');
+
+function mvwpform_autop_filter() {
+	if (class_exists('MW_WP_Form_Admin')) {
+		$mw_wp_form_admin = new MW_WP_Form_Admin();
+		$forms = $mw_wp_form_admin->get_forms();
+		foreach ($forms as $form) {
+			add_filter('mwform_content_wpautop_mw-wp-form-' . $form->ID, '__return_false');
+		}
+	}
+}
+mvwpform_autop_filter();

@@ -23,25 +23,23 @@
   padding: 8rem 4rem 4rem;
   width: 40rem;
   height: 100vh;
-  height: 100dvh;
   background: var.$brand-color;
   color: var.$white;
   position: fixed;
   top: 0;
   right: 0;
-  transform: translateX(100%);
+  transform: translate(100%, 0);
   z-index: 9999;
   @include mix.transitionDuration();
   
   .view-nav & {
-    transform: translateX(0);
+    transform: translate(0, 0);
   }
   
   &-overlay {
     width: 100vw;
     height: 100vh;
-    height: 100dvh;
-    background: rgba(0,0,0,.6);
+    background: rgba(0, 0, 0, .6);
     position: fixed;
     top: 0;
     right: 0;
@@ -113,7 +111,7 @@
   }
 }
 
-@media screen and (max-width:var.$tabletMiddleSize) {
+@media screen and (max-width: var.$tabletMiddleSize) {
   .drawer-menu-button {
     display: block;
   }
@@ -123,6 +121,10 @@
   .drawer-menu {
     padding: 8rem 2.8rem 4rem;
     width: 100%;
+    
+    &-overlay {
+      display: none;
+    }
     
     &-navigation {
       margin-bottom: 6rem;

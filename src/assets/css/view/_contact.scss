@@ -5,6 +5,10 @@
 // contact
 // ============================================================
 
+.grecaptcha-badge {
+  visibility: hidden;
+}
+
 .contact {
   &-form {
   }
@@ -23,6 +27,10 @@
     
     &__description {
       font-size: 1.3rem;
+      
+      a {
+        text-decoration: underline;
+      }
     }
   }
   

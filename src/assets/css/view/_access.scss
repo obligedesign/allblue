@@ -9,6 +9,7 @@
   width: 100%;
   background: var.$brand-color;
   position: relative;
+  z-index: 1;
   
   &__inner {
     display: flex;
